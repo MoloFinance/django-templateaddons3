@@ -1,7 +1,7 @@
 import re
 
 from django import template
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from six import iteritems, text_type
 
 
@@ -41,7 +41,7 @@ def split_arguments(str):
     Inspired by django.template.Token.split_contents(), except that arguments
     can be named.
     """
-    str = force_text(str)
+    str = force_str(str)
     str = str.split(u' ', 1)
     if not len(str) > 1:
         return []
